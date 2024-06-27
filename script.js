@@ -1,5 +1,3 @@
-
-//Accessing the rest countries API data by fetch method
 fetch("https://restcountries.com/v3.1/all")
 .then(res => res.json())
 .then(data =>{
@@ -20,14 +18,12 @@ for(let i=0;i<data.length;i++){
    };
    restCountries.push(countryObj);
 }
-// console.log(restCountries);
+
 return restCountries;
 })
 .then(data =>{
-//creating row and col as per country count
 
 let countryCount = data.length;
-// console.log(countryCount);
 
 let model = document.createElement("div");
 model.setAttribute('class', 'modal fade');
@@ -133,8 +129,6 @@ document.body.append(model, container);
 })
 .catch(error => console.log(error))
 
-
-//while pressing the click weather button, getting the weather by fetch method
 let press = (country, city, countryCode)=>{
         const apiKey = "0676b5b2685b23ccfdfb180b90545698";
         let mod = document.getElementById("weatherModal");
@@ -169,7 +163,6 @@ let press = (country, city, countryCode)=>{
             windSpeed : data.wind.speed,
             windDirection : data.wind.deg
         };
-        // alert(weatherObj);
         return weatherObj;
         
     })
